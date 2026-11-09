@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>JOGO DA VELHA</h1>
+    </header>
+    <search id="infosGame">
+      <div id="playerCurrent">
+        <h3 id="nameCurrent"></h3>
+      </div>
+      <div id="score">
+        <h2 id="scoreTitle">PLACAR:</h2>
+        <h3 id="scorePlayer1">player1test</h3>
+        <h3 id="scorePlayer2">player2test</h3>
+      </div>
+      <div id="result"></div>
+    </search>
+
+    <main>
+      <section id="sectionTicTacToe" data-current-player="player1">
+        <div id="mainContainer">
+          <div class="column" id="column1" data-value="" data-status-game="">
+            1
+          </div>
+          <div class="column" id="column2" data-value="" data-status-game="">
+            2
+          </div>
+          <div class="column" id="column3" data-value="" data-status-game="">
+            3
+          </div>
+          <div class="column" id="column4" data-value="" data-status-game="">
+            4
+          </div>
+          <div class="column" id="column5" data-value="" data-status-game="">
+            5
+          </div>
+          <div class="column" id="column6" data-value="" data-status-game="">
+            6
+          </div>
+          <div class="column" id="column7" data-value="" data-status-game="">
+            7
+          </div>
+          <div class="column" id="column8" data-value="" data-status-game="">
+            8
+          </div>
+          <div class="column" id="column9" data-value="" data-status-game="">
+            9
+          </div>
+        </div>
+        <button id="nextPlay">Next</button>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+#mainContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.column:nth-child(3n) {
+  border-right: none;
+}
+.column:nth-child(-n + 3) {
+  border-top: none;
+}
+.column:nth-child(3n + 1) {
+  border-left: none;
+}
+.column:nth-child(n + 7) {
+  border-bottom: none;
+}
+
+.winnerPossibility {
+  background-color: hsl(110, 94%, 49%);
+}
