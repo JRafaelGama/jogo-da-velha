@@ -29,6 +29,7 @@ function registerWin(player) {
 const sectionTicTacToe = document.querySelector("#sectionTicTacToe");
 const btnNextPlay = document.querySelector("#nextPlay");
 
+let lastStartingPlayer = "player1";
 const board = Array.from(document.querySelectorAll(".column"));
 const winPosibility = [
   [0, 1, 2],
@@ -87,6 +88,7 @@ function toMark(ev) {
     if (result != undefined) {
       resultDiv.textContent = result;
       gameOver = true;
+      resetRound();
     }
   }
 }
@@ -159,4 +161,22 @@ function gameCheck() {
   if (draw) {
     return "Empate";
   }
+}
+
+function resetRound() {
+  board.forEach((column) => {
+    column.dataset.value = "";
+    column.textContent = "";
+  });
+
+  if (lastStartingPlayer === "player1") {
+    playerCurrent.textContent = namePlayer2;
+    sectionTicTacToe.dataset.currentPlayer = "player2";
+    lastStartingPlayer = "player2";
+  } else {
+    playerCurrent.textContent = namePlayer1;
+    sectionTicTacToe.dataset.currentPlayer = "player1";
+    lastStartingPlayer = "player1";
+  }
+  gameOver = false;
 }
