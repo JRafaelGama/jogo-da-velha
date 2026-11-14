@@ -88,7 +88,7 @@ function toMark(ev) {
     if (result != undefined) {
       resultDiv.textContent = result;
       gameOver = true;
-      resetRound();
+      setTimeout(resetRound, 3000);
     }
   }
 }
@@ -178,5 +178,15 @@ function resetRound() {
     sectionTicTacToe.dataset.currentPlayer = "player1";
     lastStartingPlayer = "player1";
   }
+
+  if (winningCombination) {
+    winningCombination.forEach((elemento) => {
+      board[elemento].classList.remove("winnerPossibility");
+    });
+  }
+  winningCombination = null;
+  lastColumn = null;
+  move = false;
+  resultDiv.textContent = "";
   gameOver = false;
 }
