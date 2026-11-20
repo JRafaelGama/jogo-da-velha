@@ -28,6 +28,7 @@ function registerWin(player) {
 }
 const sectionTicTacToe = document.querySelector("#sectionTicTacToe");
 const btnNextPlay = document.querySelector("#nextPlay");
+const btnRestart = document.querySelector("#restart");
 
 let lastStartingPlayer = "player1";
 const board = Array.from(document.querySelectorAll(".column"));
@@ -42,9 +43,6 @@ const winPosibility = [
   [2, 4, 6],
 ];
 const resultDiv = document.querySelector("#result");
-// const board = rowsArr.map((row) => {
-//   return Array.from(row.querySelectorAll(".column"));
-// });
 
 let gameOver = false;
 board.forEach((column) => {
@@ -116,9 +114,7 @@ let winningCombination;
 function gameCheck() {
   const winX = winPosibility.some((posibility) => {
     const verific = posibility.every((n) => {
-      if (board[n].dataset.value == "X") {
-        return board[n].dataset.value == "X";
-      }
+      return board[n].dataset.value == "X";
     });
     if (verific) {
       winningCombination = posibility;
@@ -130,9 +126,7 @@ function gameCheck() {
   if (winX === false) {
     winO = winPosibility.some((posibility) => {
       const verific = posibility.every((n) => {
-        if (board[n].dataset.value == "O") {
-          return board[n].dataset.value == "O";
-        }
+        return board[n].dataset.value == "O";
       });
       if (verific) {
         winningCombination = posibility;
@@ -190,3 +184,7 @@ function resetRound() {
   resultDiv.textContent = "";
   gameOver = false;
 }
+
+btnRestart.addEventListener("click", () => {
+  location.reload();
+});

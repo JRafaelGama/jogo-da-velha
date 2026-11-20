@@ -13,12 +13,15 @@
     </header>
     <search id="infosGame">
       <div id="playerCurrent">
+        <h3 id="current">Sua vez:</h3>
         <h3 id="nameCurrent"></h3>
       </div>
       <div id="score">
-        <h2 id="scoreTitle">PLACAR:</h2>
-        <h3 id="scorePlayer1">player1test</h3>
-        <h3 id="scorePlayer2">player2test</h3>
+        <h2 id="scoreTitle">PLACAR</h2>
+        <div id="scorePlayers">
+          <h3 id="scorePlayer1">player1test</h3>
+          <h3 id="scorePlayer2">player2test</h3>
+        </div>
       </div>
       <div id="result"></div>
     </search>
@@ -54,7 +57,10 @@
             9
           </div>
         </div>
-        <button id="nextPlay">Next</button>
+        <div id="containerBtn">
+          <button id="nextPlay">NEXT</button>
+          <button id="restart">Reiniciar Partida</button>
+        </div>
       </section>
     </main>
   </body>
